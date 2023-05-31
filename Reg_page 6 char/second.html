@@ -1,0 +1,65 @@
+<form id="registration-form" onsubmit="return validateRegistrationForm()">
+  <label for="first-name">First Name:</label>
+  <input type="text" id="first-name" name="first-name" required>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="mobile-number">Mobile Number:</label>
+  <input type="tel" id="mobile-number" name="mobile-number" required>
+
+  <input type="submit" value="Register">
+</form>
+<div id="error-container"></div>
+
+<script>
+  function validateRegistrationForm() {
+    var firstName = document.getElementById("first-name").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var mobileNumber = document.getElementById("mobile-number").value;
+
+    var isValid = true;
+    var errorMessages = [];
+
+    // Validate First Name
+    if (!/^[a-zA-Z]+$/.test(firstName) || firstName.length < 6) {
+      isValid = false;
+      errorMessages.push("First Name should contain alphabets and be at least 6 characters long.");
+    }
+
+    // Validate Password
+    if (password.length < 6) {
+      isValid = false;
+      errorMessages.push("Password should be at least 6 characters long.");
+    }
+
+    // Validate Email
+    if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+      isValid = false;
+      errorMessages.push("Invalid Email format.");
+    }
+
+    // Validate Mobile Number
+    if (!/^\d{10}$/.test(mobileNumber)) {
+      isValid = false;
+      errorMessages.push("Mobile Number should contain exactly 10 digits.");
+    }
+
+    // Display error messages if any
+    if (!isValid) {
+      var errorContainer = document.getElementById("error-container");
+      errorContainer.innerHTML = errorMessages.join("<br>");
+    // alert(errorMessages)
+    } else {
+      // Clear any previous error messages
+      var errorContainer = document.getElementById("error-container");
+      errorContainer.innerHTML = "";
+    }
+
+    return isValid;
+  }
+</script>

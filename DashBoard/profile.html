@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Admin Profile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .profile {
+        display: flex;
+        flex-direction: column;
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      
+    }
+    
+    .profile img {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    
+    .profile h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .profile p {
+      text-align: center;
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .profile .info {
+      margin-top: 20px;
+    }
+    
+    .profile .info p {
+      margin-bottom: 10px;
+    }
+    
+    .profile .info span {
+      font-weight: bold;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    header button{
+        background-color: #333;
+        border: 2px solid white;
+        border-radius: 2px;
+        padding: 10px;
+        color: white;
+    }
+
+    header button:hover
+    {
+        background-color: black;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    header a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .profile button{
+        padding:10px;
+        text-align: center;
+        border-radius: 3px;
+        position: relative;
+        left:7rem;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <h1>AISSMS IOIT</h1>
+        <h1>College Admin Dashboard</h1>
+        <div class="buttons">
+            <button><a href="/index.html">Dashboard</a></button>
+            <button>Sign Out</button>
+        </div>
+      </header>
+
+  <div class="profile">
+    <img src="admin_avatar.png" alt="Admin Avatar">
+    <h2>John Doe</h2>
+    <p>College Administrator</p>
+    
+    <div class="info">
+      <p><span>Email:</span> admin@example.com</p>
+      <p><span>Phone:</span> +1 123 456 7890</p>
+      <p><span>Address:</span> 123 College Street, City, Country</p>
+      <button>Edit Profile</button>
+    </div>
+  </div>
+</body>
+</html>
